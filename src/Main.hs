@@ -122,4 +122,3 @@ generateSite = do
     create ["atom.xml"] $ makeFeed renderAtom
     create ["feed.xml"] $ makeFeed renderRss
     create ["feed.json"] $ makeFeed renderJson
-

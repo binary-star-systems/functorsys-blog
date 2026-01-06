@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: Released on an unsuspecting world.
+description: "Released on an unsuspecting world."
 published: 2025-01-01
 ---
 

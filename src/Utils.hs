@@ -143,3 +143,4 @@ jsonListHandler subKeys = go
       return $ "{" ++ intercalate "," jsonFields ++ "}"
 
   formatPair (k, v) = show k ++ ":" ++ show v
+

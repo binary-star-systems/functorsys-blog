@@ -5,10 +5,10 @@ import Hakyll
 feed :: FeedConfiguration
 feed =
   FeedConfiguration
-    { feedTitle = siteName
+    { feedTitle = "Functors and Systems"
     , feedDescription = siteDescription
-    , feedAuthorName = "Site Author"
-    , feedAuthorEmail = "author@example.com"
+    , feedAuthorName = "functor.systems"
+    , feedAuthorEmail = "hello@functor.systems"
     , feedRoot = siteRoot
     }
 
@@ -16,10 +16,10 @@ snapshotDir :: String
 snapshotDir = "content"
 
 siteName :: String
-siteName = "My Site"
+siteName = "Functors & Systems"
 
 siteRoot :: String
-siteRoot = "https://example.com"
+siteRoot = "https://functor.systems"
 
 siteDescription :: String
-siteDescription = "A static site built with Hakyll and Typst"
+siteDescription = "A math and technology blog from functor.systems"
