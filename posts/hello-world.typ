@@ -8,7 +8,7 @@ published: 2025-01-01
 
 #show: html-shim
 
-Welcome to your new blog! This is a sample post demonstrating the Typst-based blogging system.
+Welcome to the Functors & Systems blog! This is a sample post demonstrating the Typst-based blogging system.
 
 = Writing Content
 

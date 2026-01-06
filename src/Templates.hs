@@ -69,7 +69,7 @@ siteHeader :: Html
 siteHeader =
   header ! class_ "site-header mb-8 pb-4" $ do
     H.div ! class_ "flex items-center justify-between" $ do
-      a ! href "/" ! class_ "wordmark" $ "Functors & Systems"
+      a ! href "/" ! class_ "wordmark" $ toHtml siteName
       nav ! class_ "flex gap-6" $ do
         a ! href "/archive" ! class_ "nav-link" $ "Archive"
         a ! href "/about" ! class_ "nav-link" $ "About"
@@ -123,7 +123,10 @@ defaultTemplate ctx item =
                   forM_ author $ \author' -> do
                     " · "
                     H.span $ toHtml author'
-              H.div ! class_ "prose" $ preEscapedToHtml (itemBody item)
+              H.div
+                ! class_
+                  "prose-lg max-w-none text-foreground prose-a:text-link prose-ul:list-disc prose-ul:pl-6 prose-ul:my-4 prose-ol:list-decimal prose-ol:pl-6 prose-ol:my-4 prose-li:my-1"
+                $ preEscapedToHtml (itemBody item)
           pageFooter commitHash' ghc' time'
  where
   getField' = getStringField ctx item

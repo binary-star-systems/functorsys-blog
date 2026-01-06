@@ -8,7 +8,7 @@ feed =
     { feedTitle = "Functors and Systems"
     , feedDescription = siteDescription
     , feedAuthorName = "functor.systems"
-    , feedAuthorEmail = "hello@functor.systems"
+    , feedAuthorEmail = "blog@functor.systems"
     , feedRoot = siteRoot
     }
 
@@ -19,7 +19,7 @@ siteName :: String
 siteName = "Functors & Systems"
 
 siteRoot :: String
-siteRoot = "https://functor.systems"
+siteRoot = "https://blog.functor.systems"
 
 siteDescription :: String
-siteDescription = "A math and technology blog from functor.systems"
+siteDescription = "A math and technology blog from functor.systems."

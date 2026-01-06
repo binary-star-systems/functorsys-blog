@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@config "./tailwind.config.js";
 
 /* Local font faces */
 @font-face {
@@ -58,305 +59,143 @@
   font-display: swap;
 }
 
-/* :root { */
-/*   --bg-color: 254 254 254; */
-/*   --foreground-color: 87 82 121; */
-/*   --surface-color: 245 245 245; */
-/*   --overlay-color: 242 242 242; */
-/*   --muted-color: 152 147 165; */
-/*   --subtle-color: 121 117 147; */
-/*   --love-color: 180 99 122; */
-/*   --rose-color: 215 130 126; */
-/*   --pine-color: 40 105 131; */
-/*   --foam-color: 86 148 159; */
-/*   --iris-color: 144 122 169; */
-/*   --gold-color: 234 157 52; */
-/* } */
-/**/
-/* @media (prefers-color-scheme: dark) { */
-/*   :root { */
-/*     --bg-color: 25 23 36; */
-/*     --foreground-color: 224 222 244; */
-/*     --surface-color: 31 29 46; */
-/*     --overlay-color: 38 35 58; */
-/*     --muted-color: 110 106 134; */
-/*     --subtle-color: 144 140 170; */
-/*     --love-color: 235 111 146; */
-/*     --rose-color: 235 188 186; */
-/*     --pine-color: 49 116 143; */
-/*     --foam-color: 156 207 216; */
-/*     --iris-color: 196 167 231; */
-/*     --gold-color: 246 193 119; */
-/*   } */
-/* } */
-/**/
-/* /* ─── theme-aware color definitions ─────────────────────────────────── */ */
-/* @theme inline { */
-/*   --color-bg: rgb(var(--bg-color)); */
-/*   --color-foreground: rgb(var(--foreground-color)); */
-/*   --color-surface: rgb(var(--surface-color)); */
-/*   --color-overlay: rgb(var(--overlay-color)); */
-/*   --color-muted: rgb(var(--muted-color)); */
-/*   --color-subtle: rgb(var(--subtle-color)); */
-/*   --color-love: rgb(var(--love-color)); */
-/*   --color-rose: rgb(var(--rose-color)); */
-/*   --color-pine: rgb(var(--pine-color)); */
-/*   --color-foam: rgb(var(--foam-color)); */
-/*   --color-iris: rgb(var(--iris-color)); */
-/*   --color-gold: rgb(var(--gold-color)); */
-/* } */
-/**/
-/* @theme { */
-/*   --font-serif: 'Valkyrie A', serif; */
-/*   --font-sans: 'Source Sans 3', sans-serif; */
-/*   --font-index: 'Concourse Index', sans-serif; */
-/* } */
+/* ─── raw color values (light mode) ─────────────────────────────────── */
+:root {
+  --bg-color: 250 249 247;
+  --foreground-color: 44 44 44;
+  --muted-color: 107 107 107;
+  --divider-color: 226 224 220;
+  --surface-color: 240 239 237;
+  --overlay-color: 31 31 36;
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: 26 26 31;
+    --foreground-color: 232 230 227;
+    --muted-color: 154 154 154;
+    --divider-color: 45 45 50;
+    --surface-color: 42 42 48;
+    --overlay-color: 31 31 36;
+  }
+}
+
+/* ─── theme-aware color definitions ─────────────────────────────────── */
+@theme inline {
+  --color-bg: rgb(var(--bg-color));
+  --color-foreground: rgb(var(--foreground-color));
+  --color-muted: rgb(var(--muted-color));
+  --color-divider: rgb(var(--divider-color));
+  --color-surface: rgb(var(--surface-color));
+  --color-overlay: rgb(var(--overlay-color));
+}
 
 @theme {
-  /* Academic color palette */
-  --color-paper: #faf9f7;
-  --color-paper-dark: #1a1a1f;
-  --color-ink: #2c2c2c;
-  --color-ink-dark: #e8e6e3;
-  --color-subtle: #6b6b6b;
-  --color-subtle-dark: #9a9a9a;
-  --color-accent: #1a5f7a;
-  --color-accent-dark: #8fa3bf;
-  --color-border: #e2e0dc;
-  --color-border-dark: #2d2d32;
-
-  /* Typography */
   --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
   --font-sans: system-ui, -apple-system, sans-serif;
   --font-grotesk: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
-:root {
-  --color-bg: var(--color-paper);
-  --color-text: var(--color-ink);
-  --color-muted: var(--color-subtle);
-  --color-link: var(--color-accent);
-  --color-divider: var(--color-border);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: var(--color-paper-dark);
-    --color-text: var(--color-ink-dark);
-    --color-muted: var(--color-subtle-dark);
-    --color-link: var(--color-accent-dark);
-    --color-divider: var(--color-border-dark);
-  }
+@utility text-link {
+  @apply text-blue-900 dark:text-blue-200 hover:underline;
 }
 
 html {
-  font-family: var(--font-serif);
+  @apply font-serif;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.7;
+  @apply bg-bg text-foreground leading-relaxed;
   font-size: 1.05rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.text-muted {
-  color: var(--color-muted);
-}
-
-a {
-  color: var(--color-link);
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* Site header */
-.site-header {
-  border-bottom: 1px solid var(--color-divider);
-}
-
-.site-header a {
-  color: var(--color-text);
-}
-
-.site-header a:hover {
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-.wordmark {
-  font-family: var(--font-grotesk);
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-link {
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  transition: color 0.15s ease;
-}
-
-.nav-link:hover {
-  color: var(--color-text);
+  @apply font-sans font-semibold tracking-tight;
 }
 
 /* Prose content */
 .prose {
-  @apply max-w-none;
-  color: var(--color-text);
+  @apply max-w-none text-foreground prose-a:text-link prose-ul:list-disc prose-ul:pl-6 prose-ul:my-4 prose-ol:list-decimal prose-ol:pl-6 prose-ol:my-4 prose-li:my-1;
 }
 
-.prose a {
-  color: var(--color-link);
+/* Site header */
+.site-header {
+  @apply border-b border-divider;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  font-family: var(--font-sans);
-  color: var(--color-text);
-  margin-top: 2em;
-  margin-bottom: 0.75em;
+.wordmark {
+  @apply font-grotesk font-bold text-3xl tracking-tight text-foreground text-link no-underline;
 }
 
-.prose h1 { font-size: 1.75rem; }
-.prose h2 { font-size: 1.4rem; }
-.prose h3 { font-size: 1.2rem; }
-
-.prose p {
-  margin-bottom: 1.25em;
+.nav-link {
+  @apply font-sans text-sm text-muted transition-colors duration-150;
 }
 
-.prose blockquote {
-  border-left: 3px solid var(--color-divider);
-  padding-left: 1.25em;
-  font-style: italic;
-  color: var(--color-muted);
+.nav-link:hover {
+  @apply text-foreground;
 }
 
 /* Code blocks */
 pre {
-  @apply px-4 py-2 overflow-x-auto w-0 min-w-full rounded-md border-1 border-slate-200 dark:border-zinc-700;
-  font-family: var(--font-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  pre {
-    background-color: #1f1f24;
-  }
+  @apply px-4 py-2 overflow-x-auto w-0 min-w-full rounded-md font-mono bg-surface border border-divider;
 }
 
 code:not(pre *) {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background-color: #f0efed;
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  code:not(pre *) {
-    background-color: #2a2a30;
-  }
+  @apply font-mono text-sm bg-surface px-1.5 py-0.5 rounded;
 }
 
 /* Post list */
 .post-item {
-  display: block;
+  @apply block transition-colors duration-150 no-underline;
   padding: 0rem 0.25rem;
   margin: 0 -0.25rem;
-  text-decoration: none;
-  transition: background-color 0.15s ease;
 }
 
 .post-item:hover {
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-@media (prefers-color-scheme: dark) {
-  .post-item:hover {
-    background-color: rgba(255, 255, 255, 0.04);
-  }
+  background-color: rgb(var(--foreground-color) / 0.03);
 }
 
 .post-title {
-  @apply tracking-wide;
-  font-family: var(--font-serif);
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--color-text);
+  @apply font-grotesk text-xl tracking-wide text-foreground;
 }
 
 .post-date {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  white-space: nowrap;
+  @apply font-sans text-sm text-muted whitespace-nowrap;
 }
 
 .post-description {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  margin-top: 0.25rem;
-  line-height: 1.5;
+  @apply text-sm text-muted mt-1 leading-normal;
 }
 
 /* Footer */
 .site-footer {
-  border-top: 1px solid var(--color-divider);
-  font-size: 0.85rem;
-  color: var(--color-muted);
+  @apply border-t border-divider text-sm text-muted;
 }
 
 .site-footer a {
-  color: var(--color-muted);
-}
-
-.site-footer a:hover {
-  color: var(--color-link);
+  @apply text-muted text-link transition-colors duration-150;
 }
 
 /* Article header */
 .article-title {
-  font-family: var(--font-grotesk);
-  font-size: 2rem;
-  font-weight: 700;
+  @apply font-grotesk text-3xl font-bold leading-tight mb-2;
   letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
 }
 
 .article-meta {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  color: var(--color-muted);
+  @apply font-sans text-sm text-muted;
 }
 
 /* Section headers */
 .section-title {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-muted);
-  margin-bottom: 1rem;
+  @apply font-sans text-sm font-semibold uppercase tracking-widest text-muted mb-4;
 }
 
+.math {
+  filter: invert(0);
+  display: inline-block;
+}
 
 /* math formatting */
 .block-math {

@@ -21,6 +21,44 @@ module.exports = {
         },
       },
       typography: () => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              fontFamily: "var(--font-sans)",
+              fontSize: rem(20),
+              marginTop: em(16, 20),
+              marginBottom: em(4, 20),
+            },
+            h2: {
+              fontFamily: "var(--font-sans)",
+              fontSize: rem(18),
+              marginTop: em(14, 18),
+              marginBottom: em(4, 18),
+            },
+            h3: {
+              fontFamily: "var(--font-sans)",
+              fontSize: rem(16),
+              marginTop: em(12, 16),
+              marginBottom: em(2, 16),
+            },
+            h4: {
+              fontFamily: "var(--font-sans)",
+              fontSize: rem(15),
+              marginTop: em(10, 15),
+              marginBottom: em(2, 15),
+            },
+            p: {
+              marginBottom: em(20, 16),
+            },
+            blockquote: {
+              borderLeftWidth: "3px",
+              borderLeftColor: "rgb(var(--divider-color))",
+              paddingLeft: em(20, 16),
+              fontStyle: "italic",
+              color: "rgb(var(--muted-color))",
+            },
+          },
+        },
         lg: {
           css: [
             {

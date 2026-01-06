@@ -7,14 +7,14 @@
     html.elem(
       "blockquote",
       attrs: (
-        class: "border-l-solid border-l-4 border-l-subtle px-4 w-fit text-[0.9em]",
+        class: "border-l-solid border-l-4 border-l-divider px-4 w-fit text-[0.9em]",
       ),
       {
         body
         if attribution != none {
           html.elem(
             "div",
-            attrs: (class: "w-fit ml-auto text-subtle"),
+            attrs: (class: "w-fit ml-auto text-muted"),
             attribution,
           )
         }
@@ -25,10 +25,9 @@
 
 #let dinkus = context {
   if target() == "html" {
-    html.elem("hr")
     html.elem(
       "div",
-      attrs: (class: "w-full text-center text-xl text-subtle select-none"),
+      attrs: (class: "w-full text-center text-xl text-muted select-none"),
       [⁂],
     )
   } else {
@@ -61,7 +60,7 @@
   extraFigureClass: "",
 ) => context {
   if target() == "html" {
-    let base-img-classes = "rounded-md mx-auto shadow-sm dark:shadow-none shadow-gray-900"
+    let base-img-classes = "rounded-md mx-auto"
     let img-classes = if extraImgClass != none {
       base-img-classes + " " + extraImgClass
     } else {
@@ -80,7 +79,7 @@
         img
         html.elem(
           "figcaption",
-          attrs: (class: "text-[0.88em] text-center text-subtle"),
+          attrs: (class: "text-[0.88em] text-center text-muted"),
           caption,
         )
       })
@@ -115,7 +114,7 @@
     html.elem(
       "div",
       attrs: (
-        class: "py-2 px-4 text-[0.8em] rounded-md border-1 border-slate-200 dark:border-zinc-700 bg-slate-50 dark:bg-overlay leading-[1.5em]",
+        class: "py-2 px-4 text-[0.8em] rounded-md border border-divider bg-surface leading-[1.5em]",
       ),
       {
         html.elem("div", smallcaps(all: true)[By the way])
@@ -225,7 +224,7 @@
         html.elem(
           "sup",
           attrs: (
-            class: "font-index text-iris text-[0.83em] hover:bg-love/15 transition-colors] ml-0.5 [vertical-align: baseline] relative -top-[0.33em]",
+            class: "font-sans text-link text-[0.83em] ml-0.5 [vertical-align:baseline] relative -top-[0.33em]",
           ),
           [#it2.body],
         )
