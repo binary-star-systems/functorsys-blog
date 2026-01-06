@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+:root {
+  --color-subtle: #666;
+  --color-link: #0066cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-subtle: #999;
+    --color-link: #6db3f2;
+  }
+}
+
+body {
+  @apply text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-900;
+}
+
+.text-subtle {
+  color: var(--color-subtle);
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.prose {
+  @apply prose-gray dark:prose-invert max-w-none;
+}
+
+.prose a {
+  color: var(--color-link);
+}
+
+pre {
+  @apply p-4 overflow-x-auto rounded bg-gray-100 dark:bg-gray-800;
+}
+
+code:not(pre *) {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 rounded text-sm;
+}

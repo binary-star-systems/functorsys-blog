@@ -1,0 +1,51 @@
+cabal-version: 3.4
+name: website
+version: 1.0.0.0
+license: GPL-3.0-or-later
+license-file: LICENSE
+synopsis: Hakyll + Typst static site generator
+category: Web, Text
+build-type: Simple
+description:
+  A static site generator template using Hakyll with Typst for content.
+
+flag threaded
+  default: True
+
+executable website
+  hs-source-dirs: src
+  main-is: Main.hs
+  other-modules:
+    BlazeSupport
+    Compilers
+    Constants
+    Templates
+    Types
+    Utils
+
+  build-depends:
+    base,
+    blaze-html,
+    blaze-markup,
+    bytestring,
+    filepath,
+    hakyll,
+    liquidhaskell,
+    pandoc,
+    process,
+    temporary,
+    text,
+    unix-time,
+
+  default-language: GHC2024
+  default-extensions:
+    DerivingStrategies
+    MultilineStrings
+    OverloadedStrings
+
+  if flag(threaded)
+    ghc-options:
+      -threaded
+      -rtsopts
+      -with-rtsopts=-N
+      -fplugin=LiquidHaskell
