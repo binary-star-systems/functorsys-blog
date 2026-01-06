@@ -1,6 +1,118 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* Local font faces */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/Grotesk-03Regular.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-Regular.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-It.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-Light.otf.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-LightIt.otf.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-Bold.otf.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-BoldIt.otf.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* :root { */
+/*   --bg-color: 254 254 254; */
+/*   --foreground-color: 87 82 121; */
+/*   --surface-color: 245 245 245; */
+/*   --overlay-color: 242 242 242; */
+/*   --muted-color: 152 147 165; */
+/*   --subtle-color: 121 117 147; */
+/*   --love-color: 180 99 122; */
+/*   --rose-color: 215 130 126; */
+/*   --pine-color: 40 105 131; */
+/*   --foam-color: 86 148 159; */
+/*   --iris-color: 144 122 169; */
+/*   --gold-color: 234 157 52; */
+/* } */
+/**/
+/* @media (prefers-color-scheme: dark) { */
+/*   :root { */
+/*     --bg-color: 25 23 36; */
+/*     --foreground-color: 224 222 244; */
+/*     --surface-color: 31 29 46; */
+/*     --overlay-color: 38 35 58; */
+/*     --muted-color: 110 106 134; */
+/*     --subtle-color: 144 140 170; */
+/*     --love-color: 235 111 146; */
+/*     --rose-color: 235 188 186; */
+/*     --pine-color: 49 116 143; */
+/*     --foam-color: 156 207 216; */
+/*     --iris-color: 196 167 231; */
+/*     --gold-color: 246 193 119; */
+/*   } */
+/* } */
+/**/
+/* /* ─── theme-aware color definitions ─────────────────────────────────── */ */
+/* @theme inline { */
+/*   --color-bg: rgb(var(--bg-color)); */
+/*   --color-foreground: rgb(var(--foreground-color)); */
+/*   --color-surface: rgb(var(--surface-color)); */
+/*   --color-overlay: rgb(var(--overlay-color)); */
+/*   --color-muted: rgb(var(--muted-color)); */
+/*   --color-subtle: rgb(var(--subtle-color)); */
+/*   --color-love: rgb(var(--love-color)); */
+/*   --color-rose: rgb(var(--rose-color)); */
+/*   --color-pine: rgb(var(--pine-color)); */
+/*   --color-foam: rgb(var(--foam-color)); */
+/*   --color-iris: rgb(var(--iris-color)); */
+/*   --color-gold: rgb(var(--gold-color)); */
+/* } */
+/**/
+/* @theme { */
+/*   --font-serif: 'Valkyrie A', serif; */
+/*   --font-sans: 'Source Sans 3', sans-serif; */
+/*   --font-index: 'Concourse Index', sans-serif; */
+/* } */
+
+
 @theme {
   /* Academic color palette */
   --color-paper: #faf9f7;
@@ -9,14 +121,15 @@
   --color-ink-dark: #e8e6e3;
   --color-subtle: #6b6b6b;
   --color-subtle-dark: #9a9a9a;
-  --color-accent: #4a5568;
+  --color-accent: #1a5f7a;
   --color-accent-dark: #8fa3bf;
   --color-border: #e2e0dc;
   --color-border-dark: #2d2d32;
 
   /* Typography */
-  --font-serif: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-grotesk: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
@@ -85,10 +198,10 @@ a:hover {
 }
 
 .wordmark {
-  font-family: var(--font-sans);
+  font-family: var(--font-grotesk);
   font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.03em;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
 }
 
 .nav-link {
@@ -136,13 +249,8 @@ a:hover {
 
 /* Code blocks */
 pre {
+  @apply px-4 py-2 overflow-x-auto w-0 min-w-full rounded-md border-1 border-slate-200 dark:border-zinc-700;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  padding: 1rem 1.25rem;
-  overflow-x: auto;
-  border-radius: 0.375rem;
-  background-color: #f5f4f2;
-  border: 1px solid var(--color-divider);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -168,35 +276,43 @@ code:not(pre *) {
 /* Post list */
 .post-item {
   display: block;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-divider);
+  padding: 0rem 0.25rem;
+  margin: 0 -0.25rem;
+  text-decoration: none;
   transition: background-color 0.15s ease;
 }
 
-.post-item:last-child {
-  border-bottom: none;
-}
-
 .post-item:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 @media (prefers-color-scheme: dark) {
   .post-item:hover {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: rgba(255, 255, 255, 0.04);
   }
 }
 
 .post-title {
-  font-family: var(--font-sans);
-  font-weight: 500;
+  @apply tracking-wide;
+  font-family: var(--font-serif);
+  font-weight: bold;
+  font-size: 1.25rem;
   color: var(--color-text);
 }
 
 .post-date {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.post-description {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 0.25rem;
+  line-height: 1.5;
 }
 
 /* Footer */
@@ -216,7 +332,7 @@ code:not(pre *) {
 
 /* Article header */
 .article-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-grotesk);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -225,7 +341,7 @@ code:not(pre *) {
 }
 
 .article-meta {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--color-muted);
 }
@@ -239,4 +355,16 @@ code:not(pre *) {
   letter-spacing: 0.05em;
   color: var(--color-muted);
   margin-bottom: 1rem;
+}
+
+
+/* math formatting */
+.block-math {
+  @apply flex justify-center min-w-full w-0 overflow-x-auto my-0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .math {
+    filter: invert(1);
+  }
 }

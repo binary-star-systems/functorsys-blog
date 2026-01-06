@@ -73,7 +73,7 @@ siteHeader =
       nav ! class_ "flex gap-6" $ do
         a ! href "/archive" ! class_ "nav-link" $ "Archive"
         a ! href "/about" ! class_ "nav-link" $ "About"
-        a ! href "/feed.xml" ! class_ "nav-link" $ "RSS"
+        a ! href "/atom.xml" ! class_ "nav-link" $ "RSS"
 
 pageFooter :: String -> String -> String -> Html
 pageFooter commit ghc time =
@@ -143,7 +143,7 @@ postListItem ctx item = do
         H.span ! class_ "post-title" $ toHtml $ fromMaybe "Untitled" title
         forM_ date $ \d -> H.span ! class_ "post-date" $ toHtml d
       forM_ description $ \desc ->
-        p ! class_ "text-muted text-sm mt-1" $ toHtml desc
+        p ! class_ "post-description" $ toHtml desc
  where
   getField' = getStringField ctx item
 
@@ -172,13 +172,14 @@ indexPage ctx item = do
   pure $ do
     H.div ! class_ "mb-10" $ do
       p ! class_ "text-lg mb-4" $ do
-        "A math and technology blog exploring the interplay between "
-        "abstract structures and practical systems."
+        "A math and technology blog from "
+        a ! href "https://functor.systems/" ! target "_blank" $ "functor.systems"
+        ". Writing contributed by members as well as news about our organization."
       p ! class_ "text-muted" $ do
         "Read more on the "
         a ! href "/about" $ "about page"
         "."
     unless (Prelude.null sortedPosts) $ H.div $ do
       h2 ! class_ "section-title" $ "Recent Posts"
-      H.div ! class_ "flex flex-col" $ mconcat postsRendered
+      H.div ! class_ "flex flex-col gap-y-2" $ mconcat postsRendered
       p ! class_ "mt-6" $ a ! href "/archive" $ "View all posts →"

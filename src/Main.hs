@@ -66,7 +66,7 @@ generateSite = do
         posts <- loadAll "posts/**"
         let indexCtx =
               listField "posts" postContext (return posts)
-                <> constField "title" "Home"
+                <> constField "title" "Welcome Home"
                 <> defaultContext
         makeItem ""
           >>= blazeTemplater Templates.indexPage indexCtx
