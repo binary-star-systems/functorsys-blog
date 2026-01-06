@@ -177,7 +177,7 @@ indexPage ctx item = do
       p ! class_ "text-lg mb-4" $ do
         "A math and technology blog from "
         a ! href "https://functor.systems/" ! target "_blank" $ "functor.systems"
-        ". Writing contributed by members as well as news about our organization."
+        ". In which writing is contributed by our members and news is promulgated about our organization."
       p ! class_ "text-muted" $ do
         "Read more on the "
         a ! href "/about" $ "about page"
