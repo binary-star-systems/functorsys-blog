@@ -82,7 +82,7 @@ pageFooter commit ghc time =
       H.div $ do
         a ! href "/" $ toHtml siteName
         " · "
-        a ! href "https://github.com/youwen5/functor-systems-blog" $ "Source"
+        a ! href "https://code.functor.systems/functor.systems/blog" $ "Source"
       H.div $ do
         "Built with "
         a ! href "https://jaspervdj.be/hakyll/" $ "Hakyll"
