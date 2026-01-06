@@ -88,6 +88,7 @@ css/main.css    # Tailwind CSS source
 ## Configuration
 
 Edit `src/Constants.hs` to set:
+
 - `siteName` - your site's name
 - `siteRoot` - your site's URL
 - `siteDescription` - description for feeds

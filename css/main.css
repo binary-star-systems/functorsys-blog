@@ -4,56 +4,56 @@
 
 /* Local font faces */
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("/fonts/Grotesk-03Regular.woff2") format("woff2");
+  font-family: 'Space Grotesk';
+  src: url('/fonts/Grotesk-03Regular.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-Regular.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-Regular.otf.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-It.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-It.otf.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-Light.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-Light.otf.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-LightIt.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-LightIt.otf.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-Bold.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-Bold.otf.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Serif 4";
-  src: url("/fonts/SourceSerif4-BoldIt.otf.woff2") format("woff2");
+  font-family: 'Source Serif 4';
+  src: url('/fonts/SourceSerif4-BoldIt.otf.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -91,10 +91,10 @@
 }
 
 @theme {
-  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-serif: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
   --font-sans: system-ui, -apple-system, sans-serif;
-  --font-grotesk: "Space Grotesk", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-grotesk: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
 }
 
 @utility text-link {
@@ -110,7 +110,12 @@ body {
   font-size: 1.05rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-sans font-semibold tracking-tight;
 }
 
