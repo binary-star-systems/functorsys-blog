@@ -22,3 +22,9 @@ hacking.
 Dates, locations, and timeframes TBD. This post will be updated accordingly.
 All members are welcome and encouraged to participate, both virtually and in
 person.
+
+#blockquote(attribution: [--- #link(
+    "https://www.ycombinator.com/people/garry-tan",
+  )[Garry Tan]])[
+  Prompt. Do not be prompted.
+]
