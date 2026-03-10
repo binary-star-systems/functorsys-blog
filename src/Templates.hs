@@ -134,7 +134,6 @@ defaultTemplate ctx item =
 postListItem :: Context t -> Item t -> Compiler Html
 postListItem ctx item = do
   title <- getField' "title"
-  author <- getField' "author"
   description <- getField' "description"
   url <- getField' "url"
   date <- getField' "date"
@@ -146,10 +145,6 @@ postListItem ctx item = do
       H.div ! class_ "flex justify-between items-baseline gap-4" $ do
         H.span ! class_ "post-title" $ toHtml $ fromMaybe "Untitled" title
         forM_ date $ \d -> H.span ! class_ "post-date" $ toHtml d
-      forM_ author $ \a' ->
-        p ! class_ "post-author" $ do
-          "By "
-          toHtml a'
       forM_ description $ \desc ->
         p ! class_ "post-description" $ toHtml desc
  where
