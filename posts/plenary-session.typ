@@ -16,7 +16,7 @@ summer to discuss the future of our organization and, tentatively, set forth a
 
 The discussions will be primarily philosophical in nature. We are most
 interested in understanding the evolution and continued prestige of the hacker
-culture in the era of autonomous coding agents. Of course, we will, do lots of
+culture in the era of autonomous coding agents. Of course, we will do lots of
 hacking.
 
 Dates, locations, and timeframes TBD. This post will be updated accordingly.
