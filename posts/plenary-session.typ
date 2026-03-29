@@ -8,16 +8,21 @@ author: Youwen Wu
 
 #show: html-shim
 
+#btw[
+  The First Plenary Session of functor.systems' Californian Caliphate occurred
+  on the 28th of March, 2026. We intend to have another plenum sometime in late
+  summer 2026. The philosophical profundities uncovered during the session will
+  be published soon in another post.
+]
+
 Due to the #link("https://metr.org/time-horizons/")[latest developments] in AI
 and prompting technology, functor.systems is convening a plenary session this
 summer to discuss the future of our organization and, tentatively, set forth a
 #link("https://en.wikipedia.org/wiki/Five-year_plans_of_China")[Five Year
   Plan] for our organization.
 
-The discussions will be primarily philosophical in nature. We are most
-interested in understanding the evolution and continued prestige of the hacker
-culture in the era of autonomous coding agents. Of course, we will do lots of
-hacking.
+The discussions will be primarily philosophical in nature. Of course, we will
+do lots of hacking.
 
 Dates, locations, and timeframes TBD. This post will be updated accordingly.
 All members are welcome and encouraged to participate, both virtually and in
