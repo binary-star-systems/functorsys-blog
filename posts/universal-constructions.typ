@@ -2,6 +2,7 @@
 title: Universal constructions and universal morphisms
 published: 2026-01-04
 author: Youwen Wu
+description: "Cat Theory slop. X-Post from web.youwen.dev."
 ---
 
 #import "@preview/html-shim:0.1.0": *
